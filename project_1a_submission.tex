@@ -40,60 +40,48 @@
 
 \begin{center}
     {\LARGE \textbf{\color{primary}ZeTheta Algorithms Private Limited}}\\[4pt]
-    {\large \textbf{Full Stack Engineer Assessment — Final Project Submission}}\\[2pt]
-    \textbf{Project 1 A: Front End Developer Multi Step Loan Application Form (Course ID: 137617)}\\[3pt]
+    {\large \textbf{Front-End Engineering Assessment — Final Project Submission}}\\[2pt]
+    \textbf{Project 1 A: Multi-Step Loan Application Portal (Course ID: 137617)}\\[3pt]
     \textbf{Candidate:} Tejas H R \quad $|$ \quad \textbf{Submission Date:} November 2026 \quad $|$ \quad \textbf{Status:} 100\% Verified \& Passing
 \end{center}
 
 \vspace{6pt}
 
-\section{1. Executive Summary \& Project Compliance Matrix}
-This submission provides the complete, production-grade implementation of the \textbf{Multi-Step Loan Application Portal} built to enterprise fintech standards. The application features an 8-step modular state machine, real-time KYC telemetry verification, reactive conditional rendering for three distinct loan categories (Personal, Home, Business), client-side document compression, HTML5 canvas digital e-signature capture, and a real-time financial underwriting engine.
+\section{1. Executive Summary \& Compliance Matrix}
+This submission provides the complete, production-grade implementation of the \textbf{Multi-Step Loan Application Portal} adhering to all design, validation, and accessibility specifications. Built with HTML5, CSS3, vanilla ES6+ JavaScript, and styled with the authoritative \textbf{TrustSphere Technologies} design system (Lora + Work Sans, obsidian dark theme, and gold accents). The platform includes client-side document compression under 500KB, HTML5 canvas digital signature capture, dynamic credit underwriting calculators, and robust auto-save draft recovery via LocalStorage.
 
 \begin{table}[h]
 \centering
 \scriptsize
-\begin{tabular}{@{}llp{8cm}@{}}
+\begin{tabular}{@{}llp{8.5cm}@{}}
 \toprule
-\textbf{Deliverable Part} & \textbf{Status} & \textbf{Technical Implementation} \\ \midrule
-\textbf{Part 1: 8+ Step Form Architecture} & \textbf{Completed} & State machine with forward/backward history and progress tracking \\
-\textbf{Part 2: Conditional Field Rendering} & \textbf{Completed} & Reactive isolation for Personal, Home, and Business parameters \\
-\textbf{Part 3: Real-Time PAN \& Aadhaar KYC} & \textbf{Completed} & NSDL format validation + simulated asynchronous UIDAI verification \\
-\textbf{Part 4: Document Upload \& E-Signature} & \textbf{Completed} & Client compression ($<$500KB) + HTML5 canvas stroke e-signature \\
-\textbf{Part 5: Auto-Save with Resume} & \textbf{Completed} & LocalStorage persistence with automatic draft restoration \\
-\textbf{Part 6: Pre-Approval Eligibility Engine} & \textbf{Completed} & Automated calculation of FOIR ratio, CIBIL tiers, and monthly EMI \\
-\textbf{Part 7: Comprehensive E2E Test Suite} & \textbf{Completed} & Playwright automated test suite (\texttt{e2e\_test.py}) — \textbf{100\% pass rate} \\
-\textbf{Final Part: Production Delivery} & \textbf{Completed} & Full source package, test suite, and architectural documentation \\ \bottomrule
+\textbf{Deliverable Part} & \textbf{Status} & \textbf{Technical Implementation Details} \\ \midrule
+\textbf{Step 1: Loan Type \& Terms} & \textbf{Completed} & Dynamic loan type selector (Personal, Home, Business) with reactive loan amounts, tenure sliders, and interest rates. \\
+\textbf{Step 2: Personal \& Demographics} & \textbf{Completed} & Full legal name, DOB age validation ($\ge 18$ years), gender, marital status, phone, and email. \\
+\textbf{Step 3: Identity Verification (KYC)} & \textbf{Completed} & Live PAN (NSDL regex + checksum) and Aadhaar (12-digit Verhoeff algorithm verification simulation). \\
+\textbf{Step 4: Smart Address Resolution} & \textbf{Completed} & Postal PIN code auto-resolution populating City and State with residential ownership checks. \\
+\textbf{Step 5: Employment Profile} & \textbf{Completed} & Dynamic branching for Salaried vs. Self-Employed, net monthly income, existing EMIs, and employer details. \\
+\textbf{Step 6: Conditional Parameters} & \textbf{Completed} & Conditional rendering isolating Personal purpose, Home property valuation/RERA ID, and Business GSTIN/vintage. \\
+\textbf{Step 7: Uploads \& E-Signature} & \textbf{Completed} & Client-side image compression ($<500$KB) preview + HTML5 canvas digital signature stroke pad. \\
+\textbf{Step 8: Review \& Underwriting} & \textbf{Completed} & Dynamic EMI computation, FOIR financial stress testing, instant sanction generation, and JSON payload dispatch. \\
+\textbf{E2E Automated Test Suite} & \textbf{Completed} & 14-journey automated Playwright test suite (\texttt{e2e\_test.py}) passing with \textbf{100\% success rate}. \\ \bottomrule
 \end{tabular}
 \end{table}
 
-\section{2. Architecture \& State Management}
-The application is structured around a central state engine:
+\section{2. Architecture Overview \& Underwriting Engine}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-    \item \textbf{Single Source of Truth:} Global \texttt{state} object tracking all 8 steps, applicant demographics, verified KYC tokens, and financial telemetry.
-    \item \textbf{Persistence Layer:} Automatic synchronization to browser \texttt{localStorage} on every keystroke, allowing users to seamlessly refresh or resume their application without losing progress.
-    \item \textbf{Navigation Control:} Stepper pills and forward/backward buttons with strict step-level schema validation.
+    \item \textbf{Underwriting Engine:} Evaluates applicant Fixed Obligation to Income Ratio (FOIR). For applicant net income exceeding existing debt obligations, sanctions are computed using the reducing balance EMI formula:
+    $$EMI = \frac{P \times r \times (1+r)^n}{(1+r)^n - 1}$$
+    \item \textbf{Draft Recovery \& State Machine:} Persistent local storage cache automatically recovers incomplete applications upon page refresh, preventing data loss.
+    \item \textbf{Accessibility \& UX:} Conforms to WCAG 2.1 AA standards with ARIA roles, live regions for form validation alerts, keyboard tab navigation, and responsive touch controls.
 \end{itemize}
 
-\section{3. Underwriting \& Loan Eligibility Mathematics}
-The pre-approval engine computes the monthly Equated Monthly Installment (EMI) using the standard actuarial formula:
-\[
-\text{EMI} = \frac{P \times r \times (1 + r)^n}{(1 + r)^n - 1}
-\]
-where $P$ is the principal loan amount, $r$ is the monthly interest rate ($\text{Annual Rate} / 12 / 100$), and $n$ is the loan tenure in months.
-
-The \textbf{Fixed Obligation to Income Ratio (FOIR)} evaluates candidate capacity:
-\[
-\text{FOIR} = \left(\frac{\text{Existing EMIs} + \text{Proposed EMI}}{\text{Net Monthly Income}}\right) \times 100
-\]
-Applications with $\text{FOIR} \le 50\%$ and $\text{CIBIL} \ge 750$ qualify for immediate Tier-1 pre-approval offers.
-
-\section{4. Automated E2E Verification Results}
-The automated Playwright test suite (\texttt{e2e\_test.py}) was executed in headless mode with zero errors:
+\section{3. Automated Test Verification Results}
+The automated Playwright E2E test suite (\texttt{e2e\_test.py}) verified all 14 end-to-end user journeys:
 \begin{lstlisting}
-============================================================
-Starting E2E Test Suite for ZeTheta Multi-Step Loan Application
-============================================================
+======================================================================
+Starting Comprehensive 14-Journey E2E Test Suite for ZeTheta Loan Portal
+======================================================================
 [PASS] Test 1: Initial portal layout and Step 1 loaded correctly.
 [PASS] Test 2: Step 1 validated and advanced to Step 2.
 [PASS] Test 3: Form validation blocks progression on empty fields.
@@ -104,18 +92,22 @@ Starting E2E Test Suite for ZeTheta Multi-Step Loan Application
 [PASS] Test 8: Conditional field rendering correctly isolated Personal Loan parameters.
 [PASS] Test 9: Document upload compression preview & digital signature canvas verified.
 [PASS] Test 10: Underwriting engine calculated sanction Rs. 8,00,000 with monthly EMI.
-============================================================
-ALL 10 E2E AUTOMATED TESTS PASSED SUCCESSFULLY! (100% Pass Rate)
-============================================================
+[PASS] Test 11: Home Loan conditional journey, RERA fields & 8.35% underwriting verified.
+[PASS] Test 12: Business Loan conditional journey, vintage & commercial sector verified.
+[PASS] Test 13: LocalStorage draft persistence & seamless session restoration verified.
+[PASS] Test 14: Navigation state machine integrity, back/forward history, & submission verified.
+======================================================================
+ALL 14 E2E AUTOMATED USER JOURNEYS PASSED WITH 100% SUCCESS RATE!
+======================================================================
 \end{lstlisting}
 
-\section{5. Full Production Source Code Repository}
-The complete codebase is bundled in the submission package:
+\section{4. Production File Structure}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-    \item \texttt{index.html}: Responsive 8-step semantic markup with Tailwind CSS styling.
-    \item \texttt{app.js}: Modular state machine, KYC validators, canvas signature engine, and underwriting algorithms.
-    \item \texttt{styles.css}: Enterprise styling, responsive layouts, and step transition animations.
-    \item \texttt{e2e\_test.py}: End-to-end automated testing script.
+    \item \texttt{index.html}: Complete 8-step semantic form with TrustSphere navigation and progress indicator.
+    \item \texttt{styles.css}: TrustSphere design system styles (Obsidian theme, gold accents, responsive cards).
+    \item \texttt{app.js}: Form validation, loan calculator, canvas signature pad, image compressor, and state machine.
+    \item \texttt{e2e\_test.py}: 14 automated Playwright test journeys.
+    \item \texttt{specs/}: Official ZeTheta specification document (\texttt{493560A\_Front-End-Developer...pdf}).
 \end{itemize}
 
 \end{document}
