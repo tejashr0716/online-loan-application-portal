@@ -1,12 +1,12 @@
-# TrustSphere Technologies — Multi-Step Lending & Risk Engine
-> Production-grade 8-step enterprise loan onboarding and credit underwriting application built on the **TrustSphere Technologies** design system and **TrustCore** platform architecture.
+# Online Loan Application Portal (ZeTheta)
+> Production-grade 8-step enterprise loan onboarding and credit underwriting application built on the **ZeTheta** design system and **TrustCore** platform architecture.
 > **Official Project Specification:** [specs/493560A_Front-End-Developer_Multi_Step_Loan_Application_Form.pdf](specs/493560A_Front-End-Developer_Multi_Step_Loan_Application_Form.pdf)
 
 ---
 
 ## 🛡️ Enterprise Design System & Typography
 
-This platform implements the complete **TrustSphere Technologies** ([https://www.trustspheretechnologies.com/](https://www.trustspheretechnologies.com/)) frontend design language:
+This platform implements the complete **ZeTheta** ([https://www.trustspheretechnologies.com/](https://www.trustspheretechnologies.com/)) frontend design language:
 
 - **Typography**:
   - **Headings & Titles**: `'Lora', serif` (Weights: 500, 600, 700) — authoritative, board-ready, and editorial.
@@ -18,7 +18,7 @@ This platform implements the complete **TrustSphere Technologies** ([https://www
   - **Royal Blue**: `#2655C5` with `#5B8BF0` high-tech accent highlights.
   - **Text Colors**: Warm Cream `#F0E8DC` for primary text and headings, Muted Bronze `#B3A18A` for body text.
 - **Components**:
-  - TrustSphere navigation bar with metallic shield logo and wordmark.
+  - ZeTheta navigation bar with metallic shield logo and wordmark.
   - Animated `.section-tag` badge with glowing amber pulse indicator: `• ENTERPRISE DIGITAL LENDING · VERIFIED KYC & RISK ENGINE`.
   - Pathway step numerical watermarks (`01`, `02`, `03`...).
   - Glassmorphic dark card panels with gold border glow and high-contrast form controls.
@@ -120,8 +120,8 @@ python3 e2e_test.py
 ```
 ├── specs/
 │   └── 493560A_Front-End-Developer_Multi_Step_Loan_Application_Form.pdf  # Official ZeTheta Requirement Document
-├── index.html                  # TrustSphere Technologies 8-Step Loan Application Portal
-├── styles.css                  # TrustSphere Design System CSS (Lora + Work Sans, Obsidian Theme)
+├── index.html                  # ZeTheta 8-Step Loan Application Portal
+├── styles.css                  # ZeTheta Design System CSS (Lora + Work Sans, Obsidian Theme)
 ├── app.js                      # 8-Step Form State Machine, Validation Engine & Underwriting Logic
 ├── e2e_test.py                 # Playwright 14-Journey Automated E2E Test Suite
 ├── project_1a_submission.tex   # Formal Executive Submission & Engineering Report
@@ -129,4 +129,4 @@ python3 e2e_test.py
 ```
 
 ---
-*Engineered by **Tejas H R** on the **TrustSphere Technologies** platform architecture.*
+*Engineered by **Tejas H R** on the **ZeTheta** platform architecture.*

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TrustSphere Technologies — Design System & Custom Styles
+   ZeTheta — Design System & Custom Styles
    Lending & Credit Intelligence Gateway (Project 1A)
    ========================================================================== */
 
@@ -69,7 +69,7 @@ h1, h2, h3, h4, .font-serif {
   }
 }
 
-/* TrustSphere Input Fields */
+/* ZeTheta Input Fields */
 .input-field {
   width: 100%;
   border-radius: 0.65rem;
@@ -144,7 +144,7 @@ select.input-field option {
   box-shadow: 0 0 24px rgba(184, 134, 11, 0.22), inset 0 0 0 1px rgba(212, 160, 32, 0.4);
 }
 
-/* TrustSphere Buttons */
+/* ZeTheta Buttons */
 .btn-primary {
   background: var(--rust-gradient);
   color: #FFFFFF;
